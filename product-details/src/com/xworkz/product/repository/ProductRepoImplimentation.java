@@ -18,7 +18,7 @@ public class ProductRepoImplimentation implements ProductRepo {
 
 	@Override
 	public List<ProductDto> getAll() {
-	 Collections.sort(list, Comparator.comparing(ProductDto::getProductName));
+		Collections.sort((List)list);		
 		return list;
 	}
 

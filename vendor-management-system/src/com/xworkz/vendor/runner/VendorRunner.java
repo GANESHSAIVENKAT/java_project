@@ -84,13 +84,13 @@ public class VendorRunner {
                     String delete = service.deleteById(idToDelete, dto);
                     System.out.println(delete);
                     break;
-
+                   
              
 
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-           
+            scanner.close();
         }
     }
 }

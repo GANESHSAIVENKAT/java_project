@@ -21,7 +21,7 @@ public class ComplaintRepoImplimentation implements ComplaintRepo {
 	@Override
 	public List<ComplaintDto> getAll() {
 		Collections.sort(list, Comparator.comparing(ComplaintDto::getCategory));
-
+		Collections.sort((List)list);
 		return list;
 	}
 

@@ -20,7 +20,7 @@ public class VendorRepoImplimentation implements VendorRepo {
 	@Override
 	public List<VendorDto> getAll() {
 
-		Collections.sort(list, Comparator.comparing(VendorDto::getProducType));
+		Collections.sort((List)list);
 		return list;
 	}
 
