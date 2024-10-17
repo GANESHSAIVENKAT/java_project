@@ -10,5 +10,5 @@ public interface CricketersdetailsService {
 	void read();
 	 String onUpdate(CricketersListDto cricketersListDto,int newjnumber);
 	 String deleteData(int jnumber);
-	 String displayplayerRunRateBetween30And50();
+	
 }

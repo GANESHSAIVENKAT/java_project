@@ -61,6 +61,7 @@ public class TestRunner {
 		System.out.println(stream.size());
         System.out.println("-------------stream()------------------");
         System.out.println(stream.stream());
+        System.out.println(stream.retainAll(newStream));
 		
 
 	}
