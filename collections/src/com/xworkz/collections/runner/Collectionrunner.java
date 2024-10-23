@@ -2,11 +2,15 @@ package com.xworkz.collections.runner;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Collectionrunner {
 
 	public static void main(String[] args) {
-		 Collection<String> numbersOfNames = new ArrayList<String>();
+		 List<String> numbersOfNames = new ArrayList<String>();
 		 numbersOfNames.add("karnataka");
 		 numbersOfNames.add("Andhrapradesh");
 		 numbersOfNames.add("Arunachal Pradesh");
@@ -24,8 +28,14 @@ public class Collectionrunner {
 		 numbersOfNames.add("Meghalaya");
 		 System.out.println(numbersOfNames);
 		 System.out.println(numbersOfNames.size());
+		 Comparator<String> comparator = (String s1,String s2)->s2.compareToIgnoreCase(s1); 
+		 Collections.sort(numbersOfNames,comparator);
+		 System.out.println("Sort:");
+		 System.out.println(numbersOfNames);
+		 System.out.println("=====================");
 
-	       Collection<Integer> numbers = new ArrayList<Integer>();
+		 
+	       List<Integer> numbers = new ArrayList<Integer>();
 	        numbers.add(1);
 	        numbers.add(2);
 	        numbers.add(3);
@@ -41,8 +51,12 @@ public class Collectionrunner {
 	        numbers.add(13);
 	        numbers.add(14);
 	        numbers.add(15);
-	        System.out.println(numbers);
-	        System.out.println(numbers.size());
+	        //System.out.println(numbers);
+	       // System.out.println(numbers.size());
+	        Comparator<Integer> comp=(Integer s3,Integer s4)-> s4.compareTo(s3);
+	        Collections.sort(numbers, comp);
+	        System.out.println("Sort:::"+numbers);
+	        System.out.println("==================================");
 	        
 	        Collection<Double> doublenumber = new ArrayList<Double>();
 	        doublenumber.add(1.1);
@@ -55,11 +69,11 @@ public class Collectionrunner {
 	        doublenumber.add(8.8);
 	        doublenumber.add(9.9);
 	        doublenumber.add(10.10);
-	        System.out.println(numbers);
-	        System.out.println(numbers.size());
+	        System.out.println(doublenumber);
+	        System.out.println(doublenumber.size());
 	        
 	        
-	        Collection<Character> characters = new ArrayList<Character>();
+	        List<Character> characters = new LinkedList<Character>();
 	        characters.add('A');
 	        characters.add('B');
 	        characters.add('C');
@@ -80,6 +94,10 @@ public class Collectionrunner {
 	        characters.add('R');
 	        System.out.println(characters);
 	        System.out.println(characters.size());
+	        Comparator<Character> comp1=(Character s5,Character s6)-> s6.compareTo(s5);
+	        Collections.sort(characters, comp1);
+	        System.out.println("Sort:::"+characters);
+	        System.out.println("==================================");
 	        
 	        Collection<Byte> bytes = new ArrayList<Byte>();
 	        bytes.add((byte)1);
@@ -130,8 +148,9 @@ public class Collectionrunner {
 	        longvalue.add(1000000008L);
 	        longvalue.add(1000000009L);
 	        longvalue.add(1000000010L);
-	        System.out.println(numbers);
-	        System.out.println(numbers.size());
+	        System.out.println(longvalue);
+	        System.out.println(longvalue.size());
+	       
 	    }
 	
 }
