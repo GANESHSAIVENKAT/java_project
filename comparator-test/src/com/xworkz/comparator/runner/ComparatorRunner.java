@@ -1,5 +1,4 @@
 package com.xworkz.comparator.runner;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -53,12 +52,12 @@ public class ComparatorRunner {
 		numbers.add(13);
 		numbers.add(14);
 		numbers.add(15);
-
+//
 		Comparator<Integer> comp1 = (Integer s3, Integer s4) -> s4.compareTo(s3);
 		Collections.sort(numbers, comp1);
 		System.out.println("Sort:::" + numbers);
 		System.out.println("==================================");
-
+//
 		List<String> numbersOfNames = new ArrayList<String>();
 		numbersOfNames.add("karnataka");
 		numbersOfNames.add("Andhrapradesh");
@@ -75,7 +74,7 @@ public class ComparatorRunner {
 		numbersOfNames.add("HimachalPradesh");
 		numbersOfNames.add("Jharkhand");
 		numbersOfNames.add("Meghalaya");
-
+//
 		Comparator<String> comparator = (String s1, String s2) -> s2.compareToIgnoreCase(s1);
 		Collections.sort(numbersOfNames, comparator);
 		System.out.println("Sort:");
@@ -100,22 +99,22 @@ public class ComparatorRunner {
 		numbersOfNames1.add(null);
 		Comparator<String> comparator1 = (String s1, String s2) -> {
 
-			if (s1 == null)
-				return 0;
-			else if (s2 == null)
+			if (s1 == null && s2==null)
 				return 0;
 			else
 				return s2.compareToIgnoreCase(s1);
 
 		};
 
-		Collections.sort(numbersOfNames1, comparator1);
+		//Collections.sort(numbersOfNames1, comparator1);
 		System.out.println("Sorted list with Null");
 		System.out.println(numbersOfNames1);
 		System.out.println("----------------------------------------------------------------------------------------");
 		List<Person> persons = new ArrayList<Person>();
 		persons.add(new Person("Alice", 25));
 		persons.add(new Person("Bob", 30));
+		
+
 		persons.add(new Person("Charlie", 25));
 		persons.add(new Person("Dave", 30));
 		persons.add(new Person("Eve", 22));
@@ -127,11 +126,12 @@ public class ComparatorRunner {
 				if (ageComparison == 0)
 					return p1.getName().compareToIgnoreCase(p2.getName());
 				else
+					System.out.println("else part");
 					return ageComparison;
 
 			}
 		};
-
+		personComparator.compare(null,null);
 		Collections.sort(persons, personComparator);
 		System.out.println(persons);
 		System.out.println("----------------------------------------------------------------------------------------");
@@ -241,6 +241,13 @@ public class ComparatorRunner {
 			System.out.println("----------------------------------------------------------------------------------------");
 
 			
+			List<Car> cars1 = new ArrayList<Car>();
+		    cars1.add(new Car("Toyota", "Camry"));
+		    cars1.add(new Car("Honda", "Civic"));
+		    cars1.add(new Car("Ford", "Focus"));
+		    cars1.add(new Car("Toyota", "Corolla"));
+		Collections.sort( cars1);
 	}
+
 
 }
